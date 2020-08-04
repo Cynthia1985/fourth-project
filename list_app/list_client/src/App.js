@@ -1,18 +1,27 @@
 
-import React, { Component } from 'react';
-import Lists from './components/Lists.js';
-import ListsForm from './components/ListsForm.js';
+import React from 'react';
+import Carousel from './components/Carousel.js'
+import {Route, Link} from 'react-router-dom'
+import Lists from './components/Lists.js'
+import ListContainer from './components/ListContainer.js'
+import Footer from './components/Footer.js';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>My List</h1>
-        <ListsForm />
-        <Lists />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <header className="app-header">
+        <nav>
+          <Carousel />
+          <Link className="logo" to="/">
+              <h1>MyList</h1>
+          </Link>
+        </nav>
+      </header>
+      <Route exact path="/" component={Lists} />
+      <Route path="/lists/:id" component={ListContainer} />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

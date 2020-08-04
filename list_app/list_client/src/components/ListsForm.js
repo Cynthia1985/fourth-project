@@ -1,57 +1,53 @@
 
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class ListsForm extends Component {
-render() {
+function ListsForm(props) {
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("");
 
-    const [name, setName] = ("");
-    const [category, setCategory] = ("");
+  const handleSubmit = (e) => {
+     e.preventDefault();
 
-    const handleSubmit = (e) => {
-       e.preventDefault();
+     const list = {
+         name: name,
+         category: category
+     }
+     
+     props.handleSubmit(e, list);
+     setName("");
+     setCategory("");
+     props.setFormShow(false)
+  }
 
-       const list = {
-           name: name,
-           category: category
-       }
-       
-       handleSubmit(e, list);
-       setName("");
-       setCategory("");
-       
-    }
- 
-    return (
-        <>
-        <div className="form-title">
-          <h2>Add a List</h2> 
-        </div>
-        <form onSubmit={handleSubmit}>
-        <input
-          onChange={e => setName(e.target.value)}
-          name="name"
-          placeholder="List Title"
-          type="text"
-          value={name}
-          id="name"
-        />
-        <input
-          onChange={e => setCategory(e.target.value)}
-          name={"category"}
-          placeholder={"List Category"}
-          type={"text"}
-          value={category}
-          id={"category"}
-        />
-        <input
-          type="submit"
-          value="SUBMIT"
-        />
-        </form>
-        </>
-    )
-    }
-
+  return (
+      <>
+      <div className="form-title">
+        <h2>Add a List</h2> 
+      </div>
+      <form onSubmit={handleSubmit}>
+      <input
+        onChange={e => setName(e.target.value)}
+        name="name"
+        placeholder="List Title"
+        type="text"
+        value={name}
+        id="name"
+      />
+      <input
+        onChange={e => setCategory(e.target.value)}
+        name={"category"}
+        placeholder={"List Category"}
+        type={"text"}
+        value={category}
+        id={"category"}
+      />
+      <input className="btn btn-primary"
+        type="submit"
+        value="SUBMIT"
+      />
+      </form>
+      </>
+  )
 }
 
 export default ListsForm;
