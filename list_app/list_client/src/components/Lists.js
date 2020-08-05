@@ -3,15 +3,9 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom' 
 import ListsForm from './ListsForm.js'
 
-let baseURL = process.env.REACT_APP_BASEURL
+let baseURL = 'http://localhost:3000'
 
-if (process.env.NODE_ENV === 'development') {
-    baseURL = 'http://localhost:3000'
-  } else {
-    baseURL = 'https://mylist-app-api.herokuapp.com'
-  }
-
-  function Lists(props) {
+    function Lists(props) {
     const [data, setData] = useState([]);
     const [formShow, setFormShow] = useState(false);
     

@@ -13,7 +13,7 @@ function App() {
         <nav>
           <Carousel />
           <Link className="logo" to="/">
-              <h1>MyList</h1>
+              <h1>My List App</h1>
           </Link>
         </nav>
       </header>
