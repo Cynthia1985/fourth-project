@@ -5,6 +5,8 @@
     box-sizing: border-box;
     font-family: 'Permanent Marker', sans-serif;
     font-weight: 300;
+    background-color: seashell;
+    font-size: 1em;
 }
 
 .container {
