@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela&family=Titillium+Web&family=Permanent+Marker&display=swap');
 
 * {
-    box-sizing: border-box;
     font-family: 'Permanent Marker', sans-serif;
     font-weight: 300;
     background-color: seashell;
     font-size: 1em;
+    margin: 0.5em;
 }
 
 .container {
@@ -79,5 +79,5 @@ p {
 }
   
 .carousel-inner {
-	height: 200px;
+	height: 300px;
 }
